@@ -1,9 +1,10 @@
-{ config, lib, pkgs, inputs, myuser, ... }:
+{ config, lib, pkgs, inputs, myuser, myhostname, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./config-imports/flatpak.nix
     ];
 
   # ====================
@@ -15,7 +16,7 @@
   boot.loader.grub.device = "nodev";
   boot.kernelPackages = pkgs.linuxPackages_latest; # Lastest kernel bro!!!!
 
-  networking.hostName = "nixos"; # My hostname
+  networking.hostName = "${myhostname}"; # My hostname
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -62,7 +63,6 @@
   # Services
 
   programs.niri.enable = true; # WM
-  services.flatpak.enable = true; # Flatpak
   programs.gamemode.enable = true; # Gamemode
 
   # Environment Packages
