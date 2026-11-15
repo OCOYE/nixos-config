@@ -2,11 +2,13 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./config-imports/flatpak.nix
-      ./config-imports/printer_EPSONL3150.nix
-      ./config-imports/sound.nix
+    [ 
+      ./hardware-configuration.nix # HARDWARE
+      ./config-imports/flatpak.nix # flatpak-nix and flatpaks
+      ./config-imports/printer_EPSONL3150.nix # Configuration to my EpsonL3150 works
+      ./config-imports/sound.nix # To sound works (pipewire)
+      ./config-imports/fonts.nix # Fonts to my system
+      ./config-imports/greetd_and_tuigreet.nix # Login system TUI (greetd + tuigreet)
     ];
 
   # ====================
@@ -55,24 +57,7 @@
      gnome-control-center
      tuigreet
    ];
- 
-  # Greetd and Tuigreet Configs
-  services.greetd = {                                                      
-    enable = true;                                                         
-    settings = {                                                           
-      default_session = {                                                  
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-        user = "greeter";                                                  
-      };                                                                   
-    };                                                                     
-  };
 
-  # ====================
-  #        Fonts
-  # ====================
-  fonts.packages = with pkgs; [
-    font-awesome
-  ];
   system.stateVersion = "26.05";
 
 }
