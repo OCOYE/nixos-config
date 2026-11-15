@@ -1,44 +1,58 @@
 {
   description = "A simple NixOS flake";
 
+  # ====================
+  #       Inputs
+  # ====================
+
   inputs = {
-    # NixOS official package source, using the nixos-26.05 branch here
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05"; # nixos stable (principal)
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # nixos unstable
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # nix-flatpak
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager/release-26.05"; # home-manager nixos stable (principal)
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+  
+  # ====================
+  #       Outputs
+  # ====================
 
   outputs = { self, nixpkgs, home-manager, nix-flatpak, nixpkgs-unstable, ... }@inputs:
 
-  let
-    # pkgs-unstable
+  # ====================
+  #         Var
+  # ====================
+
+  let 
+    # SYSTEM 
     system = "x86_64-linux";
+    # PKGS-UNSTABLE
     pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true; # Accept NonFree softwares in pkgs-unstable
     };
-    # User
+    # USER
     myuser = "ocoye";
     myhostname = "ocoyeNIXOS";
   in
 
   {  
-    # Please replace my-nixos with your hostname
     nixosConfigurations.${myhostname} = nixpkgs.lib.nixosSystem {
-    
+      # specialArgs
       specialArgs = { inherit inputs myuser myhostname pkgs-unstable; };
+       
+      # ====================
+      #       Modules
+      # ====================
 
       modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
-        ./configuration.nix
+        ./configuration.nix # send configs
          
         nix-flatpak.nixosModules.nix-flatpak
+        # HOME-MANAGER
         home-manager.nixosModules.home-manager
 
         {
