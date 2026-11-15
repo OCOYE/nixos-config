@@ -28,6 +28,11 @@
     package = pkgs-unstable.firefox;
   };
 
+  programs.yt-dlp = {
+    enable = true;
+    package = pkgs-unstable.yt-dlp;
+  };
+
   home.packages = with pkgs; [
     neovim
     alacritty
@@ -40,7 +45,8 @@
     imv
     pcmanfm
     fastfetch
-    rmpc    
+    rmpc
+    mpc    
   ];
 
 # =====================
@@ -59,6 +65,7 @@
     "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini; # Fuzzel dotfiles
     "waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc; # Waybar dotfiles (config.jsonc)
     "waybar/style.css".source = ./dotfiles/waybar/style.css; # Waybar dotfiles (style.css)
+    "rmpc/config.ron".source = ./dotfiles/rmpc/config.ron; # Rmpc dotfiles
   };
   home.stateVersion = "26.05"; # Version
 }
