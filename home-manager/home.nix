@@ -39,10 +39,13 @@
 # =====================
 # Files and Directories
 # =====================
+  # ~
+  home.file = {
+    "Pictures/Wallpapers".source = ./wallpapers; # Wallpapers
+    ".bashrc".source = ./dotfiles/bashrc/.bashrc; # bashrc config (to fastfetch)
+  };
 
-  home.file."Pictures/Wallpapers".source = ./wallpapers; # Wallpapers
-  home.file.".bashrc".source = ./dotfiles/bashrc/.bashrc; # bashrc config (to fastfetch)
- 
+  # ~/.config/
   xdg.configFile = {
     "niri/config.kdl".source = ./dotfiles/niri/config.kdl; # Niri dotfiles
     "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini; # Fuzzel dotfiles
