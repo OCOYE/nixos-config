@@ -5,6 +5,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./config-imports/flatpak.nix
+      ./config-imports/printer_EPSONL3150.nix
+      ./config-imports/sound.nix
     ];
 
   # ====================
@@ -25,28 +27,6 @@
 
   # My TimeZone
   time.timeZone = "America/Recife";
-
-  # ====================
-  #       Printer
-  # ====================
- services.printing = {
-   enable = true;
-   drivers = [
-     pkgs.epson-escpr # To my Epson L3150
-     pkgs.epson-escpr2 # To my Epson L3150
-   ];
- };
-
-  # ====================
-  #        Sound
-  # ====================
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true; # if not already enabled
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   # My user.
    users.users.${myuser} = {

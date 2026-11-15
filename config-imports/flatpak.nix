@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 
+# ====================
+#       Flatpak
+# ====================
+
 {
   services.flatpak.enable = true; # Flatpak
   services.flatpak.packages = [

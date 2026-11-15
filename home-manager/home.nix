@@ -1,11 +1,18 @@
 { config, pkgs, ... }:
 
+
+# Git
 {
   programs.git = {
   enable = true;
   userName = "Manoel Rezende";
   userEmail = "manoelrezende70@proton.me";
 };
+
+# ====================
+#         Home
+# ====================
+
   programs.firefox.enable = true;
   home.packages = with pkgs; [
     neovim
@@ -16,13 +23,18 @@
     waybar
     swaybg    
   ];
+
+# =====================
+# Files and Directories
+# =====================
+
   home.file."Pictures/Wallpapers".source = ./wallpapers; 
   xdg.configFile = {
     "niri/config.kdl".source = ./dotfiles/niri/config.kdl; # Niri dotfiles
-    "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini;
-    "waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc;
-    "waybar/style.css".source = ./dotfiles/waybar/style.css;
+    "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini; # Fuzzel dotfiles
+    "waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc; # Waybar dotfiles (config.jsonc)
+    "waybar/style.css".source = ./dotfiles/waybar/style.css; # Waybar dotfiles (style.css)
   };
-  home.stateVersion = "26.05";
+  home.stateVersion = "26.05"; # Version
 }
   
