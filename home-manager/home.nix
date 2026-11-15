@@ -3,6 +3,10 @@
 
 # Git
 {
+  imports = [
+    ./config-imports-hm/git.nix
+    ./config-imports-hm/mpd.nix    
+  ];
   programs.git = {
   enable = true;
   settings = {
@@ -12,6 +16,8 @@
     };
   };
 };
+
+
 
 # ====================
 #         Home
@@ -33,12 +39,14 @@
     mpv
     imv
     pcmanfm
-    fastfetch    
+    fastfetch
+    rmpc    
   ];
 
 # =====================
 # Files and Directories
 # =====================
+
   # ~
   home.file = {
     "Pictures/Wallpapers".source = ./wallpapers; # Wallpapers
