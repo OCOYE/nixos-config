@@ -32,14 +32,17 @@
     swaybg
     mpv
     imv
-    pcmanfm    
+    pcmanfm
+    fastfetch    
   ];
 
 # =====================
 # Files and Directories
 # =====================
 
-  home.file."Pictures/Wallpapers".source = ./wallpapers; 
+  home.file."Pictures/Wallpapers".source = ./wallpapers; # Wallpapers
+  home.file.".bashrc".source = ./dotfiles/bashrc/.bashrc; # bashrc config (to fastfetch)
+ 
   xdg.configFile = {
     "niri/config.kdl".source = ./dotfiles/niri/config.kdl; # Niri dotfiles
     "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini; # Fuzzel dotfiles
