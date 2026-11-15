@@ -19,7 +19,7 @@
   in
   {  
     # Please replace my-nixos with your hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${myhostname} = nixpkgs.lib.nixosSystem {
     
       specialArgs = { inherit inputs myuser myhostname; };
 
