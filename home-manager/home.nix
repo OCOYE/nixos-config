@@ -7,17 +7,6 @@
     ./config-imports-hm/git.nix
     ./config-imports-hm/mpd.nix    
   ];
-  programs.git = {
-  enable = true;
-  settings = {
-    user = {
-      name = "Manoel Rezende";
-      email = "manoelrezende70@proton.me";
-    };
-  };
-};
-
-
 
 # ====================
 #         Home
@@ -26,6 +15,11 @@
   programs.firefox = {
     enable = true;
     package = pkgs-unstable.firefox;
+  };
+  
+  programs.yt-dlp = {
+    enable = true;
+    package = pkgs-unstable.yt-dlp;
   };
 
   home.packages = with pkgs; [
