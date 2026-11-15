@@ -5,8 +5,12 @@
 {
   programs.git = {
   enable = true;
-  userName = "Manoel Rezende";
-  userEmail = "manoelrezende70@proton.me";
+  settings = {
+    user = {
+      name = "Manoel Rezende";
+      email = "manoelrezende70@proton.me";
+    };
+  };
 };
 
 # ====================
