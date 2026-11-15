@@ -29,7 +29,10 @@
     pavucontrol
     wget
     waybar
-    swaybg    
+    swaybg
+    mpv
+    imv
+    pcmanfm    
   ];
 
 # =====================
