@@ -1,1 +1,2 @@
-
+home-manager/musics/*
+!home-manager/musics/.gitkeep
