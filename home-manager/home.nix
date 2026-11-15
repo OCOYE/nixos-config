@@ -46,7 +46,6 @@
   home.file = {
     "Pictures/Wallpapers".source = ./wallpapers; # Wallpapers
     ".bashrc".source = ./dotfiles/bashrc/.bashrc; # bashrc config (to fastfetch)
-    "Musics".source = ./musics; # My musics
   };
 
   # ~/.config/
