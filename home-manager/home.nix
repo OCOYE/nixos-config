@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 
 # Git
@@ -13,7 +13,11 @@
 #         Home
 # ====================
 
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs-unstable.firefox;
+  };
+
   home.packages = with pkgs; [
     neovim
     alacritty
