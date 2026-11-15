@@ -40,7 +40,8 @@
     imv
     pcmanfm
     fastfetch
-    rmpc    
+    rmpc
+    mpc    
   ];
 
 # =====================
@@ -59,6 +60,7 @@
     "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini; # Fuzzel dotfiles
     "waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc; # Waybar dotfiles (config.jsonc)
     "waybar/style.css".source = ./dotfiles/waybar/style.css; # Waybar dotfiles (style.css)
+    "rmpc/config.ron".source = ./dotfiles/rmpc/config.ron; # rmpc + mpd player
   };
   home.stateVersion = "26.05"; # Version
 }

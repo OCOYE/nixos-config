@@ -3,8 +3,15 @@
 {
   services.mpd = {
     enable = true;
-    musicDirectory = "~/Musics";
-    network.listenAddress = "127.0.0.1";
+    musicDirectory = "~/Musics";     
+
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "mpd with rmpc output"
+      }
+    '';
+    network.listenAddress = "any";
     network.startWhenNeeded = true;
-  };
+};
 }
