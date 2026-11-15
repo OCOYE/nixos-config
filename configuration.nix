@@ -50,12 +50,12 @@
   # Environment Packages
    environment.systemPackages = with pkgs; [
      # Global Packages
-     system-config-printer
-     xdg-desktop-portal-gtk
-     xdg-desktop-portal-gnome
-     oo7-portal
-     gnome-control-center
-     tuigreet
+     system-config-printer # For my printer works
+     xdg-desktop-portal-gtk # For screenshare works
+     xdg-desktop-portal-gnome # For "save file location" box
+     oo7-portal # For keyring permission acess
+     gnome-control-center # For xdg gnome and gtk applications works
+     tuigreet # For greetd
    ];
 
   system.stateVersion = "26.05";
