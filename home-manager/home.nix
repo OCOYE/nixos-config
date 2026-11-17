@@ -5,7 +5,8 @@
 {
   imports = [
     ./config-imports-hm/git.nix
-    ./config-imports-hm/mpd.nix    
+    ./config-imports-hm/mpd.nix
+    ./config-imports-hm/ssh.nix    
   ];
 
 # ====================
