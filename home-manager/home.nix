@@ -6,7 +6,8 @@
   imports = [
     ./config-imports-hm/git.nix
     ./config-imports-hm/mpd.nix
-    ./config-imports-hm/ssh.nix    
+    ./config-imports-hm/ssh.nix
+    ./config-imports-hm/mpd-mpris.nix    
   ];
 
 # ====================
@@ -37,8 +38,8 @@
     pcmanfm
     fastfetch
     rmpc
-    mpc
-    quickshell    
+    mpc    
+    swaynotificationcenter
   ];
 
 # =====================
@@ -57,7 +58,8 @@
     "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini; # Fuzzel dotfiles
     "waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc; # Waybar dotfiles (config.jsonc)
     "waybar/style.css".source = ./dotfiles/waybar/style.css; # Waybar dotfiles (style.css)
-    "quickshell/shell.qml".source = ./dotfiles/quickshell/shell.qml; # quickshell config
+    "swaync/style.css".source = ./dotfiles/swaync/style.css; # swaync dotfiles (style.css)
+    "swaync/config.json".source = ./dotfiles/swaync/config.json; # swaync dotfiles (config.json)
     "rmpc/config.ron".source = ./dotfiles/rmpc/config.ron; # rmpc + mpd player
   };
   home.stateVersion = "26.05"; # Version
