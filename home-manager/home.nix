@@ -24,7 +24,6 @@
   };
 
   home.packages = with pkgs; [
-    mako
     libnotify
     neovim
     kitty
@@ -38,7 +37,8 @@
     pcmanfm
     fastfetch
     rmpc
-    mpc    
+    mpc
+    quickshell    
   ];
 
 # =====================
@@ -57,7 +57,7 @@
     "fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini; # Fuzzel dotfiles
     "waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc; # Waybar dotfiles (config.jsonc)
     "waybar/style.css".source = ./dotfiles/waybar/style.css; # Waybar dotfiles (style.css)
-    "mako/config".source = ./dotfiles/mako/config; # mako dotfiles
+    "quickshell/shell.qml".source = ./dotfiles/quickshell/shell.qml; # quickshell config
     "rmpc/config.ron".source = ./dotfiles/rmpc/config.ron; # rmpc + mpd player
   };
   home.stateVersion = "26.05"; # Version

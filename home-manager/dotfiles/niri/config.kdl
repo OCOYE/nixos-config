@@ -216,7 +216,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -270,7 +270,6 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "mako"
 spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/a_street_with_a_building_and_a_moon_in_the_sky.png"
 spawn-at-startup "kitty" "--single-instance" "--start-as=hidden"
 
