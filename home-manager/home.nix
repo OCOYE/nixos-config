@@ -7,7 +7,8 @@
     ./config-imports-hm/git.nix
     ./config-imports-hm/mpd.nix
     ./config-imports-hm/ssh.nix
-    ./config-imports-hm/mpd-mpris.nix    
+    ./config-imports-hm/mpd-mpris.nix
+    ./config-imports-hm/yazi.nix    
   ];
 
 # ====================
@@ -35,11 +36,11 @@
     swaybg
     mpv
     imv
-    yazi
     fastfetch
     rmpc
     mpc    
     swaynotificationcenter
+    wl-clipboard
   ];
 
 # =====================
@@ -61,6 +62,7 @@
     "swaync/style.css".source = ./dotfiles/swaync/style.css; # swaync dotfiles (style.css)
     "swaync/config.json".source = ./dotfiles/swaync/config.json; # swaync dotfiles (config.json)
     "rmpc/config.ron".source = ./dotfiles/rmpc/config.ron; # rmpc + mpd player
+    "yazi/keymap.toml".source = ./dotfiles/yazi/keymap.toml; # yazi config (keymap.toml)
   };
   home.stateVersion = "26.05"; # Version
 }
