@@ -35,7 +35,7 @@
     swaybg
     mpv
     imv
-    pcmanfm
+    yazi
     fastfetch
     rmpc
     mpc    
