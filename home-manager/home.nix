@@ -8,17 +8,13 @@
     ./config-imports-hm/mpd.nix
     ./config-imports-hm/ssh.nix
     ./config-imports-hm/mpd-mpris.nix
-    ./config-imports-hm/yazi.nix    
+    ./config-imports-hm/yazi.nix
+    ./config-imports-hm/firefox.nix    
   ];
 
 # ====================
 #         Home
 # ====================
-
-  programs.firefox = {
-    enable = true;
-    package = pkgs-unstable.firefox;
-  };
   
   programs.yt-dlp = {
     enable = true;
